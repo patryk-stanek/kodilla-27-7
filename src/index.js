@@ -3,22 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-
+import { createStore, combineReducers } from 'redux';
+import DevTools from './DevTools.js';
 import reducer from './import/reducer.js';
-// import addComment from './import/actions.js';
-// import { default as editComment, addComment } from './import/actions.js';
-import {
-    addComment,
-    editComment,
-    removeComment,
-    thumbUp,
-    thumbDown
-} from './import/actions.js'
+import { addComment } from './import/actions.js'
 
-const store = createStore(reducer);
+const store = createStore(
+    reducer,
+    DevTools.instrument()
+);
 
 ReactDOM.render(
     <Provider store={store}>

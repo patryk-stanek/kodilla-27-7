@@ -51,11 +51,3 @@ export default {
     thumbUp,
     thumbDown
 }
-
-// export default function { addComment, editComment };
-// export function addComment();
-
-// export addComment;
-
-// export default function editComment();
-// export function addComment();
