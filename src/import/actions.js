@@ -1,7 +1,6 @@
 import uuid from 'uuid';
 
 export const ADD_COMMENT = 'ADD_COMMENT';
-export const EDIT_COMMENT = 'EDIT_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
 export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
@@ -12,14 +11,6 @@ export function addComment(text) {
         text: text,
         id: uuid.v4(),
         votes: 0,
-    }
-};
-
-export function editComment(id, text) {
-    return {
-        type: EDIT_COMMENT,
-        text: text,
-        id: id
     }
 }
 
@@ -46,7 +37,6 @@ export function thumbDown(id) {
 
 export default {
     addComment,
-    editComment,
     removeComment,
     thumbUp,
     thumbDown

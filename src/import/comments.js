@@ -1,5 +1,5 @@
 import {
-    ADD_COMMENT, EDIT_COMMENT, REMOVE_COMMENT, THUMB_UP_COMMENT, THUMB_DOWN_COMMENT
+    ADD_COMMENT,  REMOVE_COMMENT, THUMB_UP_COMMENT, THUMB_DOWN_COMMENT
 } from './actions.js'
 
 function comments(state = [], action) {
@@ -14,16 +14,6 @@ function comments(state = [], action) {
         ];
         case REMOVE_COMMENT:
             return state.filter(comment => comment.id !== action.id);
-        case EDIT_COMMENT:
-            return state.map(comment => {
-                if(comment.id === action.id) {
-                    return {
-                        ...comment,
-                        text: action.text
-                    }
-                }
-                return comment;
-            });
         case THUMB_UP_COMMENT:
             return state.map(comment => {
                 if(comment.id === action.id) {
